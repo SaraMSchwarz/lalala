@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Playlist from './components/Playlist'
-import SearchBar from './components/Searchbar'
-import SearchResults from './components/Searchresults'
+import Playlist from './components/Playlist';
+import SearchBar from './components/SearchBar';
+import SearchResults from './components/SearchResults';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>
