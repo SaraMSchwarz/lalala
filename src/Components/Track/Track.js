@@ -7,18 +7,20 @@ class Track extends React.Component {
     return (
       <div className="Track">
         <div className="Track-information">
-          <h3>{track.name}</h3>
-          <p>{track.artist} | {track.album}</p>
+          <h3>{this.props.track.name}</h3>
+          <p>{this.props.track.artist} | {this.props.track.album}</p>
         </div>
         <a className="Track-action"></a>
       </div>
   )}
   renderAction() {
-    if (isRemoval === true) {
+    if (this.props.isRemoval) {
+      return
     console.log <a="">-</a>
   } else {
     console.log <a="">+</a>
   }
+
 }
 }
 
