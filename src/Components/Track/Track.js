@@ -2,6 +2,7 @@ import React from 'react';
 import './Track.css';
 
 
+
 class Track extends React.Component {
   render() {
     return (
@@ -15,10 +16,8 @@ class Track extends React.Component {
   )}
   renderAction() {
     if (this.props.isRemoval) {
-      return
-    console.log <a="">-</a>
-  } else {
-    console.log <a="">+</a>
+      return ();
+
   }
 
 }
