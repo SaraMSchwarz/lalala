@@ -8,8 +8,8 @@ class SearchResults extends React.Component {
       <div className="SearchResults">
         <h2>Results</h2>
       <TrackList tracks={this.props.searchresults} onAdd={this.props.onAdd}/>
-      </div>
-  )}
+      </div>);
+    }
 }
 
 export default SearchResults;
