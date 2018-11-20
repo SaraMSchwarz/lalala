@@ -1,5 +1,5 @@
 
-const clientID = '';
+const clientID = '2cf56f67db784e558f6d075c71ec7168';
 const redirectURI = 'http://localhost:3000/';
 
 let accessToken;
@@ -54,7 +54,31 @@ let Spotify = {
         let userId;
 
         return fetch('https://api.spotify.com/v1/me', { headers: headers })
+          .then(response => response.json())
+          .then(jsonResponse => {
+            userId = jsonResponse.id;
+            return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+              headers: headers,
+              method: 'POST',
+              body: JSON.stringify({ name: name })
+            })
+              .then(response => response.json())
+              .then(jsonResponse => {
+                const playlistId = jsonResponse.id;
 
+                return fetch(
+                  `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+                  {
+                    headers: headers,
+                    method: 'POST',
+                    body: JSON.stringify({ uris: trackURIs })
+                  }
+                );
+              });
+          });
+      } else {
+        return;
       }
-}
+    }
+  };
 export default Spotify;
