@@ -34,4 +34,11 @@
 
 .SearchBar a:hover {
   background-color: rgba(192, 0, 0);
+  transform: translateY(-0.05rem);
+  box-shadow: 0 1rem 2rem  rgba(0,0,0,.2);
+}
+
+.SearchBar a:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem  rgba(0,0,0,.2);
 }
